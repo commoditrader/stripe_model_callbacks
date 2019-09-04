@@ -45,7 +45,7 @@ private
   def assign_amounts(object)
     assign_attributes(
       amount_due: Money.new(object.amount_due, object.currency),
-      application_fee: object.application_fee ? Money.new(object.application_fee, object.currency) : nil,
+      application_fee: object.application_fee_amount ? Money.new(object.application_fee_amount, object.currency) : nil,
       stripe_discount_id: stripe_discount_id_from_object(object),
       subtotal: Money.new(object.subtotal, object.currency),
       tax: object.tax ? Money.new(object.tax, object.currency) : nil,
