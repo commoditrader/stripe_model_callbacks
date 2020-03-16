@@ -26,7 +26,7 @@ describe "invoice updated" do
       expect(response.code).to eq "200"
 
       expect(stripe_invoice.stripe_id).to eq "in_00000000000000"
-      expect(stripe_invoice.application_fee).to eq nil
+      expect(stripe_invoice.application_fee_amount).to eq nil
       expect(stripe_invoice.attempt_count).to eq 1
       expect(stripe_invoice.attempted?).to eq true
       expect(stripe_invoice.billing).to eq "charge_automatically"

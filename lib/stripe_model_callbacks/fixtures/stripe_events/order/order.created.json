@@ -14,7 +14,7 @@
       "amount": 1500,
       "amount_returned": null,
       "application": null,
-      "application_fee": null,
+      "application_fee_amount": null,
       "charge": null,
       "created": 1517837533,
       "currency": "usd",

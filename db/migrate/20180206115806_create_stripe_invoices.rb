@@ -29,8 +29,8 @@ private
   def amount_columns(table)
     table.integer :amount_due_cents, null: false
     table.string :amount_due_currency, null: false
-    table.integer :application_fee_cents
-    table.string :application_fee_currency
+    table.integer :application_fee_amount_cents
+    table.string :application_fee_amount_currency
     table.string :billing, null: false
     table.integer :discount_cents
     table.string :discount_currency
