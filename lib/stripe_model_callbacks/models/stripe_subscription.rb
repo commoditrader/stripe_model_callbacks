@@ -26,6 +26,7 @@ class StripeSubscription < StripeModelCallbacks::ApplicationRecord
       stripe_plan_id: object.plan&.id
     )
 
+    assign_start_date(object)
     assign_discount(object)
     assign_items(object)
     assign_periods(object)
@@ -84,10 +85,18 @@ private
     assign_attributes(
       current_period_start: Time.zone.at(object.current_period_start),
       current_period_end: Time.zone.at(object.current_period_end),
-      start_date: Time.zone.at(object.start_date),
       trial_start: object.trial_start ? Time.zone.at(object.trial_start) : nil,
       trial_end: object.trial_end ? Time.zone.at(object.trial_end) : nil
     )
+  end
+
+  def assign_start_date(object)
+    # The date-field was renamed to start_date on 2019-10-17
+    if object.respond_to?(:start)
+      self.start_date = Time.zone.at(object.start)
+    else
+      self.start_date = Time.zone.at(object.start_date)
+    end
   end
 
   def find_item_by_stripe_item(item)

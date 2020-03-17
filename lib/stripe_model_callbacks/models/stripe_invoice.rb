@@ -27,6 +27,7 @@ class StripeInvoice < StripeModelCallbacks::ApplicationRecord
 
     assign_created(object)
     assign_amounts(object)
+    assign_application_fee(object)
 
     StripeModelCallbacks::AttributesAssignerService.execute!(
       model: self, stripe_model: object,
@@ -51,6 +52,15 @@ private
       tax: object.tax ? Money.new(object.tax, object.currency) : nil,
       total: object.total ? Money.new(object.total, object.currency) : nil
     )
+  end
+
+  def assign_application_fee(object)
+    # The date-field was renamed to application_fee_amount on 2019-03-14
+    if object.respond_to?(:application_fee)
+      self.application_fee_amount = Time.zone.at(object.application_fee)
+    else
+      self.application_fee_amount = Time.zone.at(object.application_fee_amount)
+    end
   end
 
   def assign_created(object)
