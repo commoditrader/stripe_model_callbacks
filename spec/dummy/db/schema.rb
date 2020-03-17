@@ -283,8 +283,8 @@ ActiveRecord::Schema.define(version: 2019_10_19_121690) do
     t.string "stripe_id", null: false
     t.integer "amount_due_cents", null: false
     t.string "amount_due_currency", null: false
-    t.integer "application_fee_amount_cents"
-    t.string "application_fee_amount_currency"
+    t.integer "application_fee_cents"
+    t.string "application_fee_currency"
     t.string "billing", null: false
     t.integer "ending_balance_cents"
     t.integer "ending_balance_currency"
