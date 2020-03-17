@@ -7,7 +7,7 @@ class CreateStripeInvoices < ActiveRecord::Migration[5.0]
       table.boolean :attempted, null: false
       table.datetime :next_payment_attempt
       table.boolean :closed, null: false
-      table.datetime :created, null: false
+      table.datetime :date, null: false
       table.datetime :due_date
       table.boolean :livemode, default: true, null: false
       table.text :metadata
@@ -29,8 +29,8 @@ private
   def amount_columns(table)
     table.integer :amount_due_cents, null: false
     table.string :amount_due_currency, null: false
-    table.integer :application_fee_amount_cents
-    table.string :application_fee_amount_currency
+    table.integer :application_fee_cents
+    table.string :application_fee_currency
     table.string :billing, null: false
     table.integer :discount_cents
     table.string :discount_currency
