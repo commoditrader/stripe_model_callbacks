@@ -1,4 +1,4 @@
-class AddStatusAndStatusTransitionsToStripeInvoices < ActiveRecord::Migration[6.0]
+class AddStatusAndStatusTransitionsToStripeInvoices < ActiveRecord::Migration[5.2]
   def change
     add_column :stripe_invoices, :status, :string, default: "draft", nil: false
 
