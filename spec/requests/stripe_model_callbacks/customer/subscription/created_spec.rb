@@ -58,7 +58,7 @@ describe "subscription creation" do
                 customer: stripe_customer.stripe_id,
                 end: nil,
                 percent_off: 50,
-                start: 1_518_820_551,
+                start_date: 1_518_820_551,
                 subscription: "sub_CGPXJjUMVXBLSx"
               }
             }
@@ -106,7 +106,7 @@ describe "subscription creation" do
                 customer: stripe_customer.stripe_id,
                 end: nil,
                 percent_off: 50,
-                start: 1_518_820_551,
+                start_date: 1_518_820_551,
                 subscription: "sub_CGPXJjUMVXBLSx"
               }
             }

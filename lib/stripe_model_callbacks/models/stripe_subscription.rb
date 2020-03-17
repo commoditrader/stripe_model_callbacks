@@ -84,7 +84,7 @@ private
     assign_attributes(
       current_period_start: Time.zone.at(object.current_period_start),
       current_period_end: Time.zone.at(object.current_period_end),
-      start: Time.zone.at(object.start),
+      start_date: Time.zone.at(object.start_date),
       trial_start: object.trial_start ? Time.zone.at(object.trial_start) : nil,
       trial_end: object.trial_end ? Time.zone.at(object.trial_end) : nil
     )

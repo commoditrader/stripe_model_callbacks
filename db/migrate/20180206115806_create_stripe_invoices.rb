@@ -7,7 +7,7 @@ class CreateStripeInvoices < ActiveRecord::Migration[5.0]
       table.boolean :attempted, null: false
       table.datetime :next_payment_attempt
       table.boolean :closed, null: false
-      table.datetime :date, null: false
+      table.datetime :created, null: false
       table.datetime :due_date
       table.boolean :livemode, default: true, null: false
       table.text :metadata

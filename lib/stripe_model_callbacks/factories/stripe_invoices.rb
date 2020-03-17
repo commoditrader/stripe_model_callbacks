@@ -6,8 +6,9 @@ FactoryBot.define do
     amount_due_cents { 0 }
     amount_due_currency { "USD" }
     attempted { false }
+    auto_advance { true }
     billing { "charge_automatically" }
-    closed { false }
+    billing_reason { nil }
     created { 2.days.ago }
     currency { "usd" }
     forgiven { false }

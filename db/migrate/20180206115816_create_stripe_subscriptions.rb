@@ -16,7 +16,7 @@ class CreateStripeSubscriptions < ActiveRecord::Migration[5.0]
       t.text :metadata
       t.string :stripe_plan_id, index: true
       t.integer :quantity
-      t.datetime :start
+      t.datetime :start_date
       t.integer :tax_percent
       t.string :status, index: true
       t.datetime :trial_start
