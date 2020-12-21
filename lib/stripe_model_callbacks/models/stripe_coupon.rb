@@ -2,7 +2,7 @@ class StripeCoupon < StripeModelCallbacks::ApplicationRecord
   has_many :stripe_discounts, primary_key: "stripe_id"
 
   validates :stripe_id, presence: true
-  
+
   monetize :amount_off_cents, allow_nil: true
 
   def self.stripe_class
