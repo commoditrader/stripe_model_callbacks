@@ -715,7 +715,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_141146) do
     t.text "metadata"
     t.string "stripe_plan_id"
     t.integer "quantity"
-    t.datetime "start"
+    t.datetime "start_date"
     t.integer "tax_percent"
     t.string "status"
     t.datetime "trial_start"
