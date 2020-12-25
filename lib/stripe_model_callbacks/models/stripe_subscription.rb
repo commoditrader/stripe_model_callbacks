@@ -86,7 +86,6 @@ private
       else
         default_tax_rate = StripeSubscriptionDefaultTaxRate.find_by(stripe_subscription_id: object.id, stripe_tax_rate_id: tax_rate.id)
         stripe_subscription_default_tax_rates.build(stripe_subscription_id: object.id, stripe_tax_rate_id: tax_rate.id) unless default_tax_rate
-<<<<<<< HEAD
         found_ids << default_tax_rate.id if default_tax_rate
       end
     end
@@ -98,13 +97,8 @@ private
     stripe_subscription_default_tax_rates.select(&:persisted?).each do |subscription_default_tax_rate|
       subscription_default_tax_rate.mark_for_destruction if found_ids.exclude?(subscription_default_tax_rate.stripe_tax_rate_id)
     end
-=======
-        found_ids << default_tax_rate.id
-      end
-    end
 
     stripe_subscription_default_tax_rates.where.not(id: found_ids).destroy_all
->>>>>>> a1b4507... Subscriptions: Create, update or delete default tax rates
   end
 
   def assign_discount(object)
