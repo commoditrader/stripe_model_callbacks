@@ -10,7 +10,6 @@ class StripeTaxRate < StripeModelCallbacks::ApplicationRecord
     assign_attributes(
       created: Time.zone.at(object.created),
       inclusive: object.inclusive == true,
-      jurisdiction: object.jurisdiction == true,
       stripe_id: object.id
     )
 

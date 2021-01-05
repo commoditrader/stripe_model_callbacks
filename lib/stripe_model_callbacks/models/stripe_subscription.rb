@@ -97,8 +97,6 @@ private
     stripe_subscription_default_tax_rates.select(&:persisted?).each do |subscription_default_tax_rate|
       subscription_default_tax_rate.mark_for_destruction if found_ids.exclude?(subscription_default_tax_rate.stripe_tax_rate_id)
     end
-
-    stripe_subscription_default_tax_rates.where.not(id: found_ids).destroy_all
   end
 
   def assign_discount(object)
@@ -141,6 +139,8 @@ private
         else
           sub_item.stripe_plan_id == item.plan.id
         end
+      else
+        sub_item.stripe_price_id == item.price.id
       end
     end
   end
