@@ -21,7 +21,7 @@ describe "coupon updated" do
       expect(coupon.livemode).to eq false
       expect(coupon.max_redemptions).to eq nil
       expect(coupon.metadata).to eq "{}"
-      expect(coupons.name).to eq "3 months - 25 percent off"
+      expect(coupon.name).to eq "3 months - 25 percent off"
       expect(coupon.percent_off).to eq 25
       expect(coupon.redeem_by).to eq nil
       expect(coupon.times_redeemed).to eq 0
