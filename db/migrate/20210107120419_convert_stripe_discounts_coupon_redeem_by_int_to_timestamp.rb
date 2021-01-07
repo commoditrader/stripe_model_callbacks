@@ -8,7 +8,7 @@ class ConvertStripeDiscountsCouponRedeemByIntToTimestamp < ActiveRecord::Migrati
   end
 
   def down
-    add_column :stripe_discounts, :coupon_redeem_by_int
+    add_column :stripe_discounts, :coupon_redeem_by_int, :integer
 
     StripeDiscount.where.not(coupon_redeem_by: nil).each do |stripe_discount|
       stripe_discount.update_columns(coupon_redeem_by_int: stripe_discount.coupon_redeem_by.to_i) # rubocop:disable Rails/SkipsModelValidations
