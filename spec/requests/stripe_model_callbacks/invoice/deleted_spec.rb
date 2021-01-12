@@ -62,7 +62,7 @@ describe "invoice deleted" do
         # VERSION 2019-05-16
         auto_advance: false,
         billing_reason: "subscription_create",
-        status: "draft",
+        status: "deleted",
         # VERSION 2019-05-16 - status_transitions
         finalized_at: Time.zone.parse("2019-06-29 11:05:35"),
         marked_uncollectible_at: nil,

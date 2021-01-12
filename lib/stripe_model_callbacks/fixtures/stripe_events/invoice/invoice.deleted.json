@@ -81,7 +81,7 @@
       "receipt_number": null,
       "starting_balance": 0,
       "statement_descriptor": null,
-      "status": "draft",
+      "status": "deleted",
       "status_transitions": {
         "finalized_at": 1561806335,
         "marked_uncollectible_at": null,
