@@ -14,7 +14,7 @@ describe "invoice deleted" do
   let!(:stripe_subscription_item) { create :stripe_subscription_item, stripe_id: "si_CHS7VAL80FwJv7" }
 
   describe "#execute!" do
-    it "updates the given invoice" do
+    it "updates the given invoice", :aggregate_failures do
       expect { PublicActivity.with_tracking { mock_stripe_event("invoice.deleted") } }
         .to change(StripeInvoice, :count).by(0)
         .and change(StripeInvoiceItem, :count).by(0)
