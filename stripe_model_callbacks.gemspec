@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary = "Framework for getting Stripe webhook callbacks directly to your models"
   s.description = "Framework for getting Stripe webhook callbacks directly to your models"
   s.license = "MIT"
-  s.required_ruby_version = ">= 2.5"
+  s.required_ruby_version = ">= 2.7.3"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
