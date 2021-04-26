@@ -59,8 +59,9 @@ private
   end
 
   def assign_receiver(object)
-    receiver = object&.receiver
-    return unless receiver
+    return unless object.respond_to?(:receiver)
+
+    receiver = object.receiver
 
     assign_attributes(
       receiver_address: receiver.address,
