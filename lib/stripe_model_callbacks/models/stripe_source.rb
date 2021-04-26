@@ -59,7 +59,7 @@ private
   end
 
   def assign_receiver(object)
-    receiver = object.receiver
+    receiver = object&.receiver
     return unless receiver
 
     assign_attributes(
