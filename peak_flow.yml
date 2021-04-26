@@ -1,3 +1,5 @@
+before_install:
+  - gem install bundler:2.2.15
 before_script:
   - bundle exec rake db:schema:load
 rvm: true
